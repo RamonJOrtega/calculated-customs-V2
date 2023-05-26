@@ -14,4 +14,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-![Alt text](https://github.com/RamonJOrtega/full-stack-nextJS-Todo-List/blob/main/public/to-do-list-app-image.png)
+![Alt text](https://github.com/RamonJOrtega/full-stack-nextJS-Todo-List/blob/main/public/to%20do%20list%20app%20image.png)
