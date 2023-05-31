@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page() {
     return (
         <>
@@ -12,6 +14,10 @@ export default function Page() {
             className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100">
                 
             </input>
+            <div>
+                <Link href="...">Cancel</Link>
+                <button type = "submit" className = ""> </button>
+            </div>
         </form>
         </>
     )
