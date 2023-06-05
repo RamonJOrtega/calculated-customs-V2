@@ -7,8 +7,9 @@ function getTodos() {
   return prisma.todo.findMany()
 }
 
-async function toggleTodo(id:string, complete: boolean) = {
+async function toggleTodo(id:string, complete: boolean) {
   "use server"
+  console.log(id, complete)
 }
 
 export default async function Home() {
