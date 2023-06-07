@@ -20,7 +20,7 @@ export default async function Home() {
   return (
   <>
       <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Todos</h1>
+        <h1 className="text-2xl">Database-Driven To-Do List</h1>
         <Link 
         className="border border-slate-300 px-2 py-1 rounded 
         hover:bg-slate-700 focus-within:bgslate-700 outline-none"
