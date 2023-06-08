@@ -30,7 +30,10 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map(todo => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
+          <div className="flex flex-row justify-between">
+            <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
+            <button>Delete Forever</button>
+          </div>
         ))}
       </ul>
   </>
