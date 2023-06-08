@@ -32,7 +32,7 @@ export default async function Home() {
         {todos.map(todo => (
           <div className="flex flex-row justify-between">
             <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
-            <button className="border border-slate-300 px-2 py-1 rounded 
+            <button className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
               Delete Forever
               </button>
