@@ -34,7 +34,7 @@ export default async function Home() {
             <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
             <button className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
-              Remove From List
+              Remove from List
               </button>
           </div>
         ))}
