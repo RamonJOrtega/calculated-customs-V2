@@ -25,7 +25,7 @@ export default async function Home() {
         className="my-2 border border-slate-300 px-2 py-1 rounded 
         hover:bg-slate-700 focus-within:bgslate-700 outline-none"
         href="/new"> 
-          Add New
+          Add to List
         </Link>
       </header>
       <ul className="pl-4">
@@ -34,7 +34,7 @@ export default async function Home() {
             <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
             <button className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
-              Delete Forever
+              Remove From List
               </button>
           </div>
         ))}
