@@ -12,6 +12,11 @@ async function toggleTodo(id:string, complete: boolean) {
   await prisma.todo.update({ where:{id}, data: {complete}})
 }
 
+async function removeTodo(id: string, complete: boolean) {
+  "use server"
+  await prisma.todo.delete({where:{id}})
+}
+
 export default async function Home() {
   const todos = await getTodos()
   //await prisma.todo.create({data: {title: "test", complete: false}})
