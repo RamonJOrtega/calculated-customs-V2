@@ -3,11 +3,12 @@ type TodoItemProps = {
     id: string
     title: string
     complete: boolean
-    toggleTodo: (id: string, complete: boolean) => void
     removeTodo: (id: string) => void
+    toggleTodo: (id: string, complete: boolean) => void
+    
 }
 
-export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
+export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoItemProps) {
     return (
         <div className="flex flex-row justify-between">
           
@@ -22,7 +23,8 @@ export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
                     </label>   
                 </li>   
            
-            <button className="my-1 border border-slate-300 px-2 py-1 rounded 
+            <button  onClick={() => removeTodo(id)}
+            className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
             Remove from List
             </button>
