@@ -1,4 +1,7 @@
 "use client"
+
+import React from "react"
+
 type TodoItemProps = {
     id: string
     title: string
@@ -9,6 +12,8 @@ type TodoItemProps = {
 }
 
 export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoItemProps) {
+    
+    const [removed, setRemoved] = React.useState(false)
     return (
         <div className="flex flex-row justify-between">
           
@@ -23,7 +28,11 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
                     </label>   
                 </li>   
            
-            <button  onClick={() => removeTodo(id)}
+            <button  onClick={() => {
+                removeTodo(id)
+                console.log("out")
+                setRemoved(!removed)
+            }}
             className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
             Remove from List

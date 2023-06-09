@@ -15,6 +15,7 @@ async function toggleTodo(id:string, complete: boolean) {
 async function removeTodo(id: string) {
   "use server"
   await prisma.todo.delete({where:{id}})
+  await prisma.todo.update({where:{id}, data:{}})
 }
 
 export default async function Home() {
