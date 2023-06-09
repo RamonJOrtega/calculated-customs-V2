@@ -12,7 +12,7 @@ async function toggleTodo(id:string, complete: boolean) {
   await prisma.todo.update({ where:{id}, data: {complete}})
 }
 
-async function removeTodo(id: string, complete: boolean) {
+async function removeTodo(id: string) {
   "use server"
   await prisma.todo.delete({where:{id}})
 }
@@ -35,12 +35,8 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map(todo => (
-          <div className="flex flex-row justify-between">
-            <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
-            <button className="my-1 border border-slate-300 px-2 py-1 rounded 
-            hover:bg-slate-700 focus-within:bgslate-700 outline-none">
-              Remove from List
-              </button>
+          <div >
+            <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
           </div>
         ))}
       </ul>
