@@ -9,13 +9,14 @@ function getTodos() {
 
 async function toggleTodo(id:string, complete: boolean) {
   "use server"
+  console.log("toggling")
   await prisma.todo.update({ where:{id}, data: {complete}})
 }
 
-async function removeTodo(id: string) {
+async function removeTodo(id: string) { 
   "use server"
+  console.log("removing")
   await prisma.todo.delete({where:{id}})
-  await prisma.todo.update({where:{id}, data:{}})
 }
 
 export default async function Home() {
@@ -24,7 +25,9 @@ export default async function Home() {
 
 
   return (
-  <>
+    <div className="h-screen flex">
+    <div className="max-w-md m-auto p-2">
+         <div className="bg-neutral-900 p-6 rounded-md text-white" >
       <header className="flex justify-between items-center mb-4">
         <h1 className="text-2xl">Database-Driven To-Do List</h1>
         <Link 
@@ -41,6 +44,8 @@ export default async function Home() {
           </div>
         ))}
       </ul>
-  </>
+      </div>
+           </div> 
+        </div>
   )
 } 

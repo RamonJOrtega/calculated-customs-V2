@@ -28,11 +28,9 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
                     </label>   
                 </li>   
            
-            <button  onClick={() => {
-                removeTodo(id)
-                console.log("out")
-                setRemoved(!removed)
-            }}
+            <button  onClick={()=>removeTodo(id)
+                //setRemoved(!removed)
+            }
             className="my-1 border border-slate-300 px-2 py-1 rounded 
             hover:bg-slate-700 focus-within:bgslate-700 outline-none">
             Remove from List
