@@ -16,8 +16,10 @@ async function createTodo(data: FormData) {
 
 export default function Page() {
     return (
-        <>
-        <header className="flex justify-between items-center mb-4">
+<div className="h-screen flex">
+      <div className="w-screen mt-6">
+         <div className="bg-neutral-900 p-6 rounded-md text-white" >
+<header className="flex justify-between items-center mb-4">
             <h1 className="text-2xl">
                 New
             </h1>
@@ -40,6 +42,8 @@ export default function Page() {
                 </button>
             </div>
         </form>
-        </>
+        </div>
+        </div>
+        </div>
     )
 }
