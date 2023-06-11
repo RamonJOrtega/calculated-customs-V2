@@ -1,5 +1,6 @@
 "use client"
 
+import { redirect } from "next/navigation";
 import React from "react"
 
 type TodoItemProps = {
@@ -7,13 +8,18 @@ type TodoItemProps = {
     title: string
     complete: boolean
     removeTodo: (id: string) => void
-    toggleTodo: (id: string, complete: boolean) => void
-    
+    toggleTodo: (id: string, complete: boolean) => void   
 }
+
 
 export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoItemProps) {
     
     const [removed, setRemoved] = React.useState(false)
+    const handleButtonClick = async () => {
+        await removeTodo(id)
+        setTimeout(() => {alert("removing")}, 500)
+        redirect("/")
+    }
     return (
         <div className="flex flex-row justify-between">
           
@@ -27,14 +33,22 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
                         {title}  
                     </label>   
                 </li>   
-           
-            <button  onClick={()=>removeTodo(id)
-                //setRemoved(!removed)
-            }
-            className="my-1 border border-slate-300 px-2 py-1 rounded 
-            hover:bg-slate-700 focus-within:bgslate-700 outline-none">
-            Remove from List
-            </button>
+        <form action={handleButtonClick} className="flex gap-2 flex-col">
+            {/* <input type="text" 
+            name ="title" 
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100">
+                
+            </input> */}
+            <div className="flex gap-1 justify-end">
+                
+                <button type = "submit" 
+               className="my-1 border border-slate-300 px-2 py-1 rounded 
+               hover:bg-slate-700 focus-within:bgslate-700 outline-none">
+               Remove from List
+                </button>
+            </div>
+        </form>
+
         </div>
     )
 }

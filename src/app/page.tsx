@@ -2,6 +2,8 @@ import Link from "next/link";
 import { toEditorSettings } from "typescript";
 import { prisma } from "./db";
 import { TodoItem } from "@/components/TodoItem";
+import { redirect } from "next/navigation";
+
 
 function getTodos() {
   return prisma.todo.findMany()
@@ -17,6 +19,7 @@ async function removeTodo(id: string) {
   "use server"
   console.log("removing")
   await prisma.todo.delete({where:{id}})
+  
 }
 
 export default async function Home() {
