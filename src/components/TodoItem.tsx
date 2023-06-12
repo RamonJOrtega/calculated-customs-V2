@@ -23,31 +23,31 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
     return (
         <div className="flex flex-row justify-between">
           
-                <li className="flex gap-1 items-center"> 
-                    <input id = {id} 
-                        type= "checkbox" 
-                        className="curser-pointer peer" 
-                        defaultChecked={complete}
-                        onChange={e => toggleTodo(id, e.target.checked)}/>
-                    <label htmlFor={id} className="cursor-pointer peer-checked:line-through peer-checked:text-slate-500"> 
-                        {title}  
-                    </label>   
-                </li>   
-        <form action={handleButtonClick} className="flex gap-2 flex-col">
-            {/* <input type="text" 
-            name ="title" 
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100">
-                
-            </input> */}
-            <div className="flex gap-1 justify-end">
-                
-                <button type = "submit" 
-               className="my-1 border border-slate-300 px-2 py-1 rounded 
-               hover:bg-slate-700 focus-within:bgslate-700 outline-none">
-               Remove from List
-                </button>
-            </div>
-        </form>
+            <li className="flex gap-1 items-center"> 
+                <input id = {id} 
+                    type= "checkbox" 
+                    className="curser-pointer peer" 
+                    defaultChecked={complete}
+                    onChange={e => toggleTodo(id, e.target.checked)}/>
+                <label htmlFor={id} className="cursor-pointer peer-checked:line-through peer-checked:text-slate-500"> 
+                    {title}  
+                </label>   
+            </li>   
+            <form action={handleButtonClick} className="flex gap-2 flex-col">
+                {/* <input type="text" 
+                name ="title" 
+                className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100">
+                    
+                </input> */}
+                <div className="flex gap-1 justify-end">
+                    
+                    <button type = "submit" 
+                    className="my-1 border border-slate-300 px-2 py-1 rounded 
+                    hover:bg-slate-700 focus-within:bgslate-700 outline-none">
+                    Remove from List
+                    </button>
+                </div>
+            </form>
 
         </div>
     )
