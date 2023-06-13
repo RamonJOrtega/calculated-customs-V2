@@ -27,15 +27,14 @@ export default async function Home() {
   //await prisma.todo.create({data: {title: "test", complete: false}})
 
   const gradientTextStyle = 
-    "text-white text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-blue-700";
+    "text-white text-transparent bg-clip-text bg-gradient-to-r from-slate-300 to-blue-800";
 
   return (
     <div className="h-screen flex">
       <div className="w-screen mt-6">
          <div className="bg-neutral-900 p-6 rounded-md text-white" >
           <header className="flex justify-between items-center mb-5">
-          <div className={gradientTextStyle}>Database-Driven </div>
-          <h1 className={gradientTextStyle + " text-2xl font-lightw-fit m-auto"} >To-Do List</h1>
+          <h1 className={gradientTextStyle + " text-2xl font-lightw-fit m-auto"} >Database-Driven  To-Do List </h1>
             <h1 className="text-2xl"></h1>
               <Link 
               className="my-2 border border-slate-300 px-2 py-1 rounded 
