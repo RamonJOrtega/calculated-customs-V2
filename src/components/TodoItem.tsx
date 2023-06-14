@@ -16,7 +16,6 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
 
     const handleButtonClick = async () => {
         await removeTodo(id)
-        setTimeout(() => {alert("removing")}, 500)
     }
 
     return (
