@@ -1,5 +1,7 @@
 "use client"
 
+import { redirect } from "next/navigation";
+
 import React from "react"
 
 type TodoItemProps = {
@@ -16,6 +18,7 @@ export function TodoItem({ id, title, complete, removeTodo, toggleTodo }: TodoIt
 
     const handleButtonClick = async () => {
         await removeTodo(id)
+        redirect("/")
     }
 
     return (
